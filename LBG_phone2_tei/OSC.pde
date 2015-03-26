@@ -1,5 +1,5 @@
 ///////////VARIABLES TO SET////////////
-String laptopIP = "10.0.1.4";
+String laptopIP = "10.0.1.2";
 String everyoneIP = "10.0.1.255";
 String name = "/PHONE2";  
 
@@ -24,7 +24,7 @@ void sendOSC(int msg2) {
   OscMessage msg = new OscMessage(name);//putting my ID on it yo
   msg.add(msg2);   
   oscP5.send(msg, everyone);//i am sending this data to everyone!
-  return;
+//  return;
 }
 
 static synchronized void oscEvent(OscMessage theOscMessage) {
@@ -39,11 +39,10 @@ static synchronized void oscEvent(OscMessage theOscMessage) {
       receiving2 = theOscMessage.get(0).intValue();  
 //println(receiving2);
       if (receiving2 == 1){
-        status =1;
-        
+        status =1;//should be depleting then
       }
       
-      if  (receiving2 == 2 || receiving2 == 3){
+      if  (receiving2 == 2 || receiving2 == 3){//2 = ready, 3 = shoot
        status =2;
       }
       else {

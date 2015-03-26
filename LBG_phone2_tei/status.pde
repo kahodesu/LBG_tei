@@ -13,7 +13,8 @@ info += "int HANDSHOLDING = 1;"+ "\n";
 info += "int NORM = 2;"+ "\n";
 info += "int MAKE = 3;"+ "\n";
  info += "=======================\n";
- info += "prox: " +prox+ "\n";
+ info += "prox: " + proxZone +"\n";
+ info += "ledOn: " +  ledOn + "\n";
   info += "phoneVal1: " + phoneVal1 + "\n";
   info += "powerLED: "+powerLED+ "\n";
   //Phone screen crap

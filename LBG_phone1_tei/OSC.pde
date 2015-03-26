@@ -1,5 +1,5 @@
 ///////////VARIABLES TO SET////////////
-String laptopIP = "10.0.1.4";
+String laptopIP = "10.0.1.2";
 String everyoneIP = "10.0.1.255";
 String name = "/PHONE1";  
 
@@ -37,7 +37,7 @@ public static synchronized void oscEvent(OscMessage theOscMessage) {
  if(theOscMessage.checkAddrPattern("/PHONE2") == true) {
   if(theOscMessage.checkTypetag("i")) {
       receiving2 = theOscMessage.get(0).intValue(); 
-     if ( receiving2 == 1) {
+     if (receiving2 == 1) {
        TANKEMPTY = true; 
        
      }

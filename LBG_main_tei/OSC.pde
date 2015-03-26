@@ -46,20 +46,27 @@ void oscEvent(OscMessage theOscMessage) {
    if (theOscMessage.checkAddrPattern("/PHONE1") == true) {
     if (theOscMessage.checkTypetag("i")) {
        phone1val = theOscMessage.get(0).intValue();
-       
+       println(phone1val);
        if (phone1val == 3) {
            shoot.trigger();
             shootScore ++;
          power.pause();
+         power.rewind();
          charge.pause();
        }
    
-       else if (phone1val == 1&& !power.isPlaying()) {
-          power.loop();
-         
+        if (phone2val ==0 && phone1val == 1 && !power.isPlaying()) {
+          power.play();
          charge.pause();
       
        }
+       if (phone1val == 0 ) {
+         power.pause();
+         power.rewind();
+       }
+       
+      
+     
        
     }
   }
@@ -70,8 +77,10 @@ void oscEvent(OscMessage theOscMessage) {
        if (phone2val == 3 && !charge.isPlaying()) {
          charge.loop();
           power.pause();
+               power.rewind();
         
        }
+      
        
 //         print("OSC Message Recieved: ");
 //  print("PHONE1 says:");

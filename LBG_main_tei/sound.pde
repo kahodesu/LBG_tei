@@ -15,12 +15,12 @@ void setupSound() {
   // player = minim.loadFile("marcus_kellis_theme.mp3");
   power = minim.loadFile( "power.wav");
    charge = minim.loadFile( "power.mp3");
-  alarm = minim.loadFile( "alarm.mp3");
+// loadFile( "alarm.mp3");
   song = minim.loadFile("gamesong.mp3");
   lightning= minim.loadFile("lightning.mp3");
   skysong = minim.loadFile("skysong.mp3");
   shoot = minim.loadSample( "shoot.wav");
-  scream = minim.loadSample("ghost.wav");
+//  scream = minim.loadSample("ghost.wav");
   starting = minim.loadSample("start.wav");
 }
 

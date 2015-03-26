@@ -38,8 +38,9 @@ void draw() {
   //static final int SHOOT = 2;
   //static final int POW = 3;
   //static final int DEFEND = 4;
-
+//println("tankempty = "+TANKEMPTY);
   if (status == 0) {//BLACKOUT
+  sendOSC(0);
     allOff();
     if (gloveState == true && TANKEMPTY == false) {
       status = 1;
@@ -50,6 +51,7 @@ void draw() {
  // sendOSC(1);
    if (gloveState == true){
        sendOSC(1); 
+       
       if  (TANKEMPTY == false){
           gradOn();
         
@@ -67,23 +69,26 @@ void draw() {
     if(gloveState == true) {
       if (ACCELSHOOT == true) {
         status = 3;
-            sendOSC(3);
+        sendOSC(3);
       } 
       else {
         allOn();
       }
     }
     else {
+       allOff();
      status = 0; 
     }
   }
   
   else if (status == 3) {//POW
-  //  sendOSC(3);
+  // sendOSC(3);
     allOff();
-    delay(1000);
+    delay(500);
+  //   sendOSC(3);
     allOn();
-    delay(1000);
+    delay(500);
+        allOff();
     status = 0;
   }
 
@@ -93,7 +98,7 @@ void draw() {
 
   /////SEND STATUS TO OSC//////////////
   //sendOSC(status);
- // println(status);
+ //println(status);
 
   //DISPLAY///////////////
   background(0);

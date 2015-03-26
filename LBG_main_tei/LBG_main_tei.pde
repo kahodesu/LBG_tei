@@ -35,6 +35,7 @@ boolean redTint = false;
 void setup() {
 
   size(1280, 800, P3D);
+ // size(100, 100, P3D);
   frameRate(60);
   background(255);
   noStroke();
@@ -158,7 +159,7 @@ void draw() {
 
    //--------------------------------------
   else if (state == 7) { //WINNING STATE
-        song.pause();
+   song.pause();
 skysong.play();
 if (showText(texts[3])== false) {
       textReset();
